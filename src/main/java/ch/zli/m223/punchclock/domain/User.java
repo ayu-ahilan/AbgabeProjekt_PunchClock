@@ -16,7 +16,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @Column
     private String username;
@@ -27,7 +27,7 @@ public class User {
     @JsonIgnore
     private List<Entry> entries;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
