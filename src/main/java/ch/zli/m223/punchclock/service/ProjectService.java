@@ -1,7 +1,7 @@
 package ch.zli.m223.punchclock.service;
 
 import ch.zli.m223.punchclock.domain.Category;
-import ch.zli.m223.punchclock.domain.Entry;
+import ch.zli.m223.punchclock.domain.Project;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -17,14 +17,14 @@ import java.util.List;
  */
 
 @ApplicationScoped
-public class CategoryService {
+public class ProjectService {
     @Inject
     EntityManager entityManager;
 
     @Transactional
-    public Category createCategory(Category category) {
-        entityManager.persist(category);
-        return category;
+    public Project createProject(Project project) {
+        entityManager.persist(project);
+        return project;
     }
 
     @Transactional
@@ -48,4 +48,5 @@ public class CategoryService {
         Category e = getCategory(id);
         entityManager.remove(e);
     }
+
 }

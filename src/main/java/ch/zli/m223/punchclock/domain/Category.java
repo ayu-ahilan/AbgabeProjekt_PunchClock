@@ -3,6 +3,7 @@ package ch.zli.m223.punchclock.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.ws.rs.Path;
 import java.util.List;
 
 /**
