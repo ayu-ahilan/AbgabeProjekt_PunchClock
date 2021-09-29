@@ -1,10 +1,15 @@
 package ch.zli.m223.punchclock.controller;
 
 
+import ch.zli.m223.punchclock.domain.Entry;
 import ch.zli.m223.punchclock.domain.User;
+import ch.zli.m223.punchclock.service.UserService;
+import org.eclipse.microprofile.openapi.annotations.Operation;
 
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 /**
  * Class:
@@ -13,22 +18,37 @@ import javax.ws.rs.Path;
  * @Version:
  */
 
-
+@Path("/users")
 public class UserController {
+    @Inject
+    UserService userService;
 
-    private String username;
-    private String password;
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "List all Entries", description = "")
+    public List<Entry> list() {
+        return userService.findAll();
+    }
 
-    public UserController(String username, String password) {
-        this.username = username;
-        this.password = password;
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{id}")
+    public User getEntry(@PathParam("id") Long id) {
+        return userService.getUserById(id);
     }
 
     @POST
-    @Path("/sign-up")
-    public void signUp(User user){
-        user.setUsername(username);
-        user.setPassword(password);
-        applicationUserRepository.save(user);
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Add a new Entry", description = "The newly created entry is returned. The id may not be passed.")
+    public User add(User user) {
+        return userService.createUser(user);
     }
+
+    @DELETE
+    @Path("/{id}")
+    public void delete(@PathParam("id") Long id) {
+        userService.deleteUser(id);
+    }
+
 }

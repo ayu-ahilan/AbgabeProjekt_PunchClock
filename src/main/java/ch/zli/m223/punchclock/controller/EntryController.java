@@ -32,6 +32,7 @@ public class EntryController {
         return entryService.getEntry(id);
     }
 
+    //
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -40,16 +41,12 @@ public class EntryController {
        return entryService.createEntry(entry);
     }
 
+    //Löschen eines Eintrages anhand von der ID
     @DELETE
     @Path("/{id}")
     public void delete(@PathParam("id") Long id) {
         entryService.deleteEntry(id);
     }
-
-    @DELETE
-    @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Delete a Entry", description = "The deleted entry is returned. ")
-    public void delete(long id) {entryService.deleteEntry(id);}
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
