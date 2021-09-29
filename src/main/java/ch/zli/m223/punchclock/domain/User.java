@@ -21,7 +21,8 @@ public class User {
     @Column
     private String username;
 
-    @Column private String password;
+    @Column
+    private String password;
 
     @OneToMany(mappedBy = "user")
     @JsonIgnore
@@ -53,6 +54,10 @@ public class User {
 
     public List<Entry> getEntries() {
         return entries;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public void setEntries(List<Entry> entries) {
