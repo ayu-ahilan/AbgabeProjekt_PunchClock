@@ -19,6 +19,9 @@ public class Entry {
     @ManyToOne
     private User user;
 
+    @ManyToOne
+    private Category category;
+
     public Long getId() {
         return id;
     }
@@ -42,9 +45,6 @@ public class Entry {
     public void setCheckOut(LocalDateTime checkOut) {
         this.checkOut = checkOut;
     }
-
-    @ManyToOne
-    private Category category;
 
     public User getUser() {
         return user;

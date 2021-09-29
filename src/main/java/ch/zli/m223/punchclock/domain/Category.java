@@ -16,7 +16,7 @@ import java.util.List;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long Id;
+    private Long id;
 
     @Column(nullable = false)
     private String title;
@@ -26,11 +26,11 @@ public class Category {
     private List<Entry> entries;
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getTitle() {

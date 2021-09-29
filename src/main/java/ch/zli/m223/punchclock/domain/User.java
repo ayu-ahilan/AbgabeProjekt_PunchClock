@@ -39,12 +39,12 @@ public class User {
         this.id = id;
     }
 
-    public Boolean getAdmin() {
+    public Boolean getIsAdmin() {
         return isAdmin;
     }
 
-    public void setAdmin(Boolean admin) {
-        isAdmin = admin;
+    public void setIsAdmin(Boolean admin) {
+        this.isAdmin = admin;
     }
 
     public String getUsername() {
