@@ -24,14 +24,6 @@ public class User {
     @Column
     private String password;
 
-    public Boolean getAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(Boolean admin) {
-        isAdmin = admin;
-    }
-
     @Column
     private Boolean isAdmin;
 
@@ -45,6 +37,14 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Boolean getAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        isAdmin = admin;
     }
 
     public String getUsername() {

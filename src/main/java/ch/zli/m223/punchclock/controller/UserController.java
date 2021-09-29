@@ -26,7 +26,7 @@ public class UserController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Operation(summary = "List all Entries", description = "")
-    public List<Entry> list() {
+    public List<User> list() {
         return userService.findAll();
     }
 

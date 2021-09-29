@@ -15,8 +15,6 @@ import org.eclipse.microprofile.jwt.Claims;
 @RequestScoped
 public class AuthenticationService {
 
-
-
     @Inject
     private EntityManager entityManager;
 

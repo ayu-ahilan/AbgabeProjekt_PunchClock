@@ -1,5 +1,7 @@
 package ch.zli.m223.punchclock.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -20,6 +22,7 @@ public class Category {
     private String title;
 
     @OneToMany(mappedBy = "category")
+    @JsonIgnore
     private List<Entry> entries;
 
     public Long getId() {

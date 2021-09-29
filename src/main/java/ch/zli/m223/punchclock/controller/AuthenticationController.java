@@ -2,6 +2,7 @@ package ch.zli.m223.punchclock.controller;
 
 import ch.zli.m223.punchclock.domain.User;
 import ch.zli.m223.punchclock.service.AuthenticationService;
+import ch.zli.m223.punchclock.service.UserService;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
