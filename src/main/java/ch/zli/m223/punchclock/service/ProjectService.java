@@ -28,24 +28,24 @@ public class ProjectService {
     }
 
     @Transactional
-    public void deleteCategory(long id) {
-        Category actuelCategory = entityManager.find(Category.class, id);
-        entityManager.remove(actuelCategory);
+    public void deleteProject(long id) {
+        Project actuelProject = entityManager.find(Project.class, id);
+        entityManager.remove(actuelProject);
     }
 
     @SuppressWarnings("unchecked")
-    public List<Category> findAll() {
-        var query = entityManager.createQuery("FROM Category");
+    public List<Project> findAll() {
+        var query = entityManager.createQuery("FROM Project");
         return query.getResultList();
     }
 
-    public Category getCategory(Long id) {
-        return entityManager.find(Category.class, id);
+    public Project getProject(Long id) {
+        return entityManager.find(Project.class, id);
     }
 
     @Transactional
     public void delete(Long id) {
-        Category e = getCategory(id);
+        Project e = getProject(id);
         entityManager.remove(e);
     }
 
