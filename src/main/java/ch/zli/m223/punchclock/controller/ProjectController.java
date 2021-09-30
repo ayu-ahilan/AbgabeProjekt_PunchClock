@@ -31,7 +31,7 @@ public class ProjectController {
     //gibt alle Einträge zurück
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Operation(summary = "List all Categories", description = "")
+    @Operation(summary = "List all Projects", description = "It will return all Projects")
     public List<Project> list() {
         return projectService.findAll();
     }
@@ -40,6 +40,7 @@ public class ProjectController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
+    @Operation(summary = "Get a Project", description = "The Project with the right Id will be returned")
     public Project getProject(@PathParam("id") Long id) {
         return projectService.getProject(id);
     }
@@ -48,7 +49,7 @@ public class ProjectController {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Operation(summary = "Add a new Category", description = "The newly created entry is returned. The id may not be passed.")
+    @Operation(summary = "Add a new Project", description = "The newly created Project is returned. The id may not be passed.")
     public Project add(Project project) {
         return projectService.createProject(project);
     }
@@ -56,6 +57,7 @@ public class ProjectController {
     //Löschen eines Categories anhand von der ID
     @DELETE
     @Path("/{id}")
+    @Operation(summary = "Delete a Project", description = "The Project with the right Id will be deleted")
     public void delete(@PathParam("id") Long id) {
         projectService.deleteProject(id);
     }
