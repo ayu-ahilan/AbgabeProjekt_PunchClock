@@ -20,7 +20,7 @@ import java.util.List;
  */
 
 @Path("/categories")
-@Tag(name = "Categories", description = "Handling of entries")
+@Tag(name = "Categories", description = "Handling of Categories")
 public class CategoryController {
 
     @Inject
