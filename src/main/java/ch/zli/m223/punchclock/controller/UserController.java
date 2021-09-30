@@ -53,4 +53,12 @@ public class UserController {
         userService.deleteUser(id);
     }
 
+    //Updatet einen Eintrag
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public User updateUser(User user) {
+        return userService.updateUser(user);
+    }
+
 }
